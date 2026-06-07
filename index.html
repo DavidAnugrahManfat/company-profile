@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KenanganInspirasi</title>
+    <style>
+        /* === RESET & GOOGLE FONTS === */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* FITUR SMOOTH SCROLLING & OFFSET HEADER */
+        html {
+            scroll-behavior: smooth; /* Membuat efek meluncur yang halus */
+            scroll-padding-top: 70px; /* Jarak atas agar konten tidak tertutup header saat di-scroll */
+        }
+
+        :root {
+            --primary-blue: #143B5C;
+            --secondary-blue: #1E507A;
+            --accent-green: #27AE60;
+            --text-dark: #333;
+            --text-gray: #666;
+            --bg-light: #F8F9FA;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* === NAVBAR === */
+        header {
+            background-color: var(--text-dark);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--accent-green);
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-green);
+        }
+
+        /* === HERO SECTION === */
+        #hero {
+            background-color: var(--primary-blue);
+            color: #fff;
+            padding: 80px 5% 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge {
+            background-color: rgba(39, 174, 96, 0.2);
+            color: #4ade80;
+            border: 1px solid var(--accent-green);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-family: serif;
+            font-weight: normal;
+        }
+
+        #hero p {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-green {
+            background-color: var(--accent-green);
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .btn-green:hover {
+            background-color: #219653;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            padding: 0 40px;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* === GENERAL LAYOUT === */
+        section {
+            padding: 60px 10%;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-family: serif;
+        }
+
+        .section-subtitle {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        /* === PROFIL SECTION === */
+        .profil-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #eaeaea;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h4::before {
+            content: "•";
+            color: var(--accent-green);
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .sepuh-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .sepuh-item strong {
+            display: block;
+            color: var(--primary-blue);
+        }
+
+       /* === STRUKTUR ORGANISASI (BENTUK BAGAN/TREE) === */
+        .org-box {
+            background-color: var(--primary-blue);
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 40px;
+            overflow-x: auto; /* Agar tidak terpotong di layar HP */
+        }
+        
+        .org-box h3 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tree {
+            display: flex;
+            justify-content: center;
+        }
+
+        .tree ul {
+            padding-top: 20px; 
+            position: relative;
+            display: flex;
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .tree li {
+            float: left; 
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 10px 0 10px;
+        }
+
+        /* --- Menggambar Garis Horizontal & Vertikal --- */
+        .tree li::before, .tree li::after {
+            content: '';
+            position: absolute; top: 0; right: 50%;
+            border-top: 2px solid var(--accent-green);
+            width: 50%; height: 20px;
+        }
+        .tree li::after {
+            right: auto; left: 50%;
+            border-left: 2px solid var(--accent-green);
+        }
+
+        /* Hilangkan garis untuk elemen paling atas (root) */
+        .tree li:only-child::after, .tree li:only-child::before {
+            display: none;
+        }
+        .tree li:only-child { padding-top: 0; }
+
+        /* Hapus garis lebihan di ujung kiri dan kanan */
+        .tree li:first-child::before, .tree li:last-child::after {
+            border: 0 none;
+        }
+        
+        /* Lengkungkan sudut garis di ujung */
+        .tree li:last-child::before {
+            border-right: 2px solid var(--accent-green);
+            border-radius: 0 5px 0 0;
+        }
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+        }
+
+        /* Garis turun dari elemen induk ke anak */
+        .tree ul ul::before {
+            content: '';
+            position: absolute; top: 0; left: 50%;
+            border-left: 2px solid var(--accent-green);
+            width: 0; height: 20px;
+            transform: translateX(-50%);
+        }
+
+        /* --- Desain Kotak Jabatan --- */
+        .tree li a {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 0.85rem;
+            display: inline-block;
+            border-radius: 20px;
+            background-color: var(--secondary-blue);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Desain khusus untuk kotak paling atas (Manajemen Pusat) */
+        .tree > ul > li > a {
+            background-color: var(--accent-green);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 30px;
+        }
+
+        .tree li a:hover {
+            background-color: white;
+            color: var(--primary-blue);
+            border-color: white;
+        }
+
+        /* === KABAR TERBARU SECTION === */
+        .news-image {
+            width: 100%;
+            height: 300px;
+            background-color: #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .news-date {
+            background-color: var(--accent-green);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* === 5W1H SECTION === */
+        .box-5w1h-container {
+            background-color: var(--primary-blue);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .box-5w1h-container h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .grid-5w1h {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .item-5w1h {
+            background-color: var(--secondary-blue);
+            padding: 20px;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .item-5w1h h5 {
+            color: #4ade80;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .item-5w1h p {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
+
+        /* === GALERI SECTION === */
+        .gallery-brosur {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item div {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .gallery-item h5 {
+            margin-top: 10px;
+            color: var(--primary-blue);
+        }
+        
+        .gallery-item p {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        /* === FOOTER / KONTAK SECTION === */
+        footer {
+            background-color: var(--primary-blue);
+            color: #fff;
+            padding: 50px 10%;
+            text-align: center;
+            border-top: 5px solid var(--accent-green);
+        }
+
+        footer h2 {
+            font-family: serif;
+            margin-bottom: 15px;
+        }
+        
+        footer p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><span>💧</span> KenanganInspirasi</a>
+        <nav>
+            <ul>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#berita">Berita</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="badge">S.E.P.U.H KEBANGGAAN KITA</div>
+        <h1>Merayakan Keberagaman di Setiap Tegukan</h1>
+        <p>Kopi Kenangan hadir membawa pengalaman kopi berkualitas yang dekat dengan semua kalangan</p>
+        <a href="#berita" class="btn-green">Baca Berita Terbaru</a>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <h3>21+</h3>
+                <p>Tahun Berpengalaman</p>
+            </div>
+            <div class="stat-item">
+                <h3>3 Juta+</h3>
+                <p>Outlet Tersebar</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Produk Original</p>
+            </div>
+            <div class="stat-item">
+                <h3>AQUA</h3>
+                <p>Official Distributor</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="profil">
+        <h2 class="section-title">Profil Perusahaan</h2>
+        <p class="section-subtitle">PT Bumi Berkah Boga - Kopi Kenangan merupakan salah satu perusahaan ritel kopi terbesar di Indonesia</p>
+        
+        <div class="profil-container">
+            <div class="card">
+                <h4>Visi Perusahaan</h4>
+                <p>Menjadi jaringan kopi terbesar di Indonesia dan merambah pasar global melalui produk berkualitas tinggi namun terjangkau.</p>
+            </div>
+            <div class="card">
+                <h4>Misi Perusahaan</h4>
+                <p>Menyediakan kopi berkualitas terbaik dengan memanfaatkan teknologi untuk memberikan pengalaman pelanggan yang efisien (grab-and-go).</p>
+            </div>
+            <div class="card" style="grid-column: span 2;">
+                <h4>Bidang Usaha</h4>
+                <p>Food & Beverage (F&B), khususnya ritel kopi kontemporer</p>
+            </div>
+        </div>
+
+        <div class="org-box">
+            <h3>Struktur Organisasi</h3>
+            
+            <div class="tree">
+                <ul>
+                    <li>
+                        <a href="#">Manajemen Pusat</a>
+                        <a href="#">Manajemen Pusat</a>
+                        <ul>
+                            <li><a href="#">Cabang Operasional</a></li>
+                            <li><a href="#">Departemen HR</a></li>
+                            <li><a href="#">Staff Administrasi</a></li>
+                            <li><a href="#">Gudang & Logistik</a></li>
+                        </ul>
+                        
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="berita" style="background-color: var(--bg-light);">
+        <h2 class="section-title">Kabar Terbaru Perusahaan</h2>
+        <p class="section-subtitle">Ikuti perkembangan terbaru dan kegiatan operasional PT Tirta Varia Intipratama.</p>
+
+        <div class="news-image">
+            [ Placeholder Gambar Gedung TVIP ]
+        </div>
+
+        <span class="news-date">📅 24 Jan 2024</span>
+        <h3 class="news-title">PT Tirta Varia Intipratama Perkuat Distribusi Aqua melalui Program RDD Bersama Principal</h3>
+        <p style="font-size: 0.9rem; color: var(--text-gray);">PT Tirta Varia Intipratama terus memperkuat kerja sama dengan Principal melalui perluasan program Route to Market RDD (Route Direct Distribution). Program ini ditujukan untuk mengoptimalkan jangkauan distribusi, mempercepat waktu pengiriman, dan memastikan produk AQUA selalu tersedia di toko-toko kelontong serta minimarket.</p>
+
+        <div class="box-5w1h-container">
+            <h3>Analisis Program RDD - (5W + 1H)</h3>
+            <div class="grid-5w1h">
+                <div class="item-5w1h">
+                    <h5>Apa?</h5>
+                    <p>Program optimalisasi distribusi bernama Route Direct Distribution (RDD).</p>
+                </div>
+                <div class="item-5w1h">
+                    <h5>Siapa?</h5>
+                    <p>Kolaborasi antara PT Tirta Varia Intipratama dan Principal AQUA.</p>
+                </div>
+                <div class="item-5w1h">
+                    <h5>Kapan?</h5>
+                    <p>Mulai diimplementasikan secara masif pada Januari 2024.</p>
+                </div>
+                <div class="item-5w1h">
+                    <h5>Di Mana?</h5>
+                    <p>Di seluruh area operasional depo dan outlet ritel jangkauan TVIP.</p>
+                </div>
+                <div class="item-5w1h">
+                    <h5>Mengapa?</h5>
+                    <p>Untuk memotong jalur distribusi agar lebih efisien dan menjamin ketersediaan produk.</p>
+                </div>
+                <div class="item-5w1h">
+                    <h5>Bagaimana?</h5>
+                    <p>Melakukan pemetaan ulang rute logistik dan pengerahan armada operasional langsung ke titik jual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri">
+        <h2 class="section-title">Galeri Kegiatan</h2>
+        <p class="section-subtitle">Dokumentasi dan infografis terkait aktivitas perusahaan.</p>
+
+        <h4 style="margin-bottom: 15px; color: var(--primary-blue);">Brosur Program RDD TVIP</h4>
+        <div class="gallery-brosur">
+            [ Placeholder Gambar Brosur Biru AQUA ]
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div>[Foto 1]</div>
+                <h5>Kunjungan Outlet</h5>
+                <p>Memastikan ketersediaan stok di outlet mitra.</p>
+            </div>
+            <div class="gallery-item">
+                <div>[Foto 2]</div>
+                <h5>Distribusi Produk</h5>
+                <p>Armada pengiriman siap mendistribusikan produk.</p>
+            </div>
+            <div class="gallery-item">
+                <div>[Foto 3]</div>
+                <h5>Briefing Karyawan</h5>
+                <p>Koordinasi pagi tim logistik sebelum keberangkatan.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontak">
+        <h2>AquaFlow TVIP</h2>
+        <p>PT Tirta Varia Intipratama<br>Jl. Distribusi Logistik No. 123, Jakarta, Indonesia</p>
+        <p style="color: var(--accent-green); font-weight: 600; margin-top: 15px;">
+            Email: info@tvip.co.id &nbsp;|&nbsp; Telp: (021) 1234-5678
+        </p>
+    </footer>
+
+</body>
+</html>
